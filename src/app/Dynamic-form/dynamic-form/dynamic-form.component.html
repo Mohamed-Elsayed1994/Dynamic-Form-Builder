@@ -1,20 +1,31 @@
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div *ngFor="let field of formFields" [class]="'col-' + field.cols">
-    <label>{{ currentLang === 'en' ? field.labelEn : field.labelAr }}</label>
-    <input *ngIf="field.type === 'number' || field.type === 'text'" 
-           [type]="field.type"
-           [placeholder]="currentLang === 'en' ? field.placeholderEn : field.placeholderAr"
-           [formControlName]="field.name">
+<div class="clearfix">
+  <button class="btn btn-outline-primary mt-1 float-end" type="button" (click)="changeLang()">
+    {{currentLang === 'en'? 'Arabic' : 'English'}}</button>
+</div><hr>
+<div class="row justify-content-center">
+  <div class="col-sm-12 col-md-6">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div *ngFor="let field of formFields" [class]="'col-' + field.cols">
+        <label class="form-label">{{ currentLang === 'en' ? field.labelEn : field.labelAr }}</label>
+        <input class="form-control" *ngIf="field.type === 'number' || field.type === 'text'" 
+               [type]="field.type"
+               [placeholder]="currentLang === 'en' ? field.placeholderEn : field.placeholderAr"
+               [formControlName]="field.name">
+    
+        <textarea class="form-control" *ngIf="field.type === 'textarea'"
+                  [placeholder]="currentLang === 'en' ? field.placeholderEn : field.placeholderAr"
+                  [formControlName]="field.name"></textarea>
+    
+        <select class="form-select" *ngIf="field.type === 'staticCollection'" [formControlName]="field.name">
+          <option *ngFor="let option of field.options" [value]="option.id">
+            {{ currentLang === 'en' ? option.nameEn : option.nameAr }}
+          </option>
+        </select>
+      </div><br>
+      <button class="btn btn-primary" type="submit">Submit</button>
+      
+    </form>
+    
 
-    <textarea *ngIf="field.type === 'textarea'"
-              [placeholder]="currentLang === 'en' ? field.placeholderEn : field.placeholderAr"
-              [formControlName]="field.name"></textarea>
-
-    <select *ngIf="field.type === 'staticCollection'" [formControlName]="field.name">
-      <option *ngFor="let option of field.options" [value]="option.id">
-        {{ currentLang === 'en' ? option.nameEn : option.nameAr }}
-      </option>
-    </select>
   </div>
-  <button type="submit">Submit</button>
-</form>
+</div>

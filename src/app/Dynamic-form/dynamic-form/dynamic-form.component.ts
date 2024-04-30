@@ -46,6 +46,9 @@ export class DynamicFormComponent implements OnInit {
       }
     });
   } 
+  changeLang(){
+    this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
+  }
 
   onSubmit() {
     if (this.form.valid) {
