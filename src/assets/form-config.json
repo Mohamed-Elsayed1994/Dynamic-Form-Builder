@@ -1,0 +1,130 @@
+{
+  "fields": [
+  {
+    "priority": 1,
+    "name": "applicationNumber",
+    "type": "number",
+    "labelEn": "Application Number",
+    "labelAr": "رقم الطلب",
+    "placeholderEn": "Write Application Number",
+    "placeholderAr": "أكتب رقم الطلب",
+    "validations": [
+      {
+        "name": "required",
+        "value": true,
+        "message": {
+          "en": "Please Write Application Number",
+          "ar": "من فضلك أكتب رقم الطلب"
+        }
+      }
+    ],
+    "cols": 4
+  },
+  {
+    "priority": 9,
+    "name": "passportNo",
+    "type": "text",
+    "labelEn": "Passport Number",
+    "labelAr": "رقم جواز السفر",
+    "placeholderEn": "Write Passport Number",
+    "placeholderAr": "أكتب رقم جواز السفر",
+    "validations": [
+      {
+        "name": "required",
+        "value": true,
+        "message": {
+          "en": "Please Write Passport Number",
+          "ar": "من فضلك أكتب رقم جواز السفر"
+        }
+      }
+    ],
+    "cols": 4
+  },
+  {
+    "priority": 6,
+    "name": "yearsOfExperience",
+    "type": "number",
+    "labelEn": "Years Of Experience",
+    "labelAr": "سنوات الخبرة",
+    "placeholderEn": "Write Years Of Experience",
+    "placeholderAr": "أكتب عدد سنوات الخبرة",
+    "validations": [
+      {
+        "name": "required",
+        "value": true,
+        "message": {
+          "en": "Please Write Years Of Experience",
+          "ar": "من فضلك أكتب عدد سنوات الخبرة"
+        }
+      }
+    ],
+    "cols": 4
+  },
+  {
+    "priority": 2,
+    "name": "requestType",
+    "type": "staticCollection",
+    "options": [
+      {
+        "id": 1,
+        "nameEn": "Academic Affiliation",
+        "nameAr": "الإرتباط الأكاديمى"
+      },
+      {
+        "id": 2,
+        "nameEn": "Cooperation & Understanding Between Private Higher Education Institutions & Foreign Universities",
+        "nameAr": "التعاون والتفاهم بين مؤسسات التعليم العالى الخاصة والجامعات الخارجية"
+      },
+      {
+        "id": 3,
+        "nameEn": "International Recognition",
+        "nameAr": "الإعتراف الدولى"
+     }
+    ],
+    "labelEn": "Request Type",
+    "labelAr": "نوع الطلب",
+    "placeholderEn": "Select Request Type",
+    "placeholderAr": "أختار نوع الطلب",
+    "validations": [
+      {
+        "name": "required",
+        "value": true,
+        "message": {
+        "en": "Please Select Request Type",
+        "ar": "من فضلك أختار نوع الطلب"
+      }
+     }
+    ],
+    "cols": 8
+},
+{
+  "priority": 4,
+  "name": "notes",
+  "type": "textarea",
+  "labelEn": "Notes",
+  "labelAr": "الملاحظات",
+  "placeholderEn": "Write Notes",
+  "placeholderAr": "أكتب الملاحظات",
+  "validations": [
+    {
+      "name": "required",
+      "value": true,
+      "message": {
+        "en": "Please Write Notes",
+         "ar": "من فضلك أكتب الملاحظات"
+       }
+    },
+    {
+      "name": "maxLength",
+      "value": 500,
+      "message": {
+          "en": "Maximum 500 Characters",
+          "ar": "الحد الأقصى 500 حرف"
+        }
+    }
+ ],
+ "cols": 12
+}    
+
+]
+}

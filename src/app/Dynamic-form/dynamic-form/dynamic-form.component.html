@@ -1,1 +1,20 @@
-<p>dynamic-form works!</p>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div *ngFor="let field of formFields" [class]="'col-' + field.cols">
+    <label>{{ currentLang === 'en' ? field.labelEn : field.labelAr }}</label>
+    <input *ngIf="field.type === 'number' || field.type === 'text'" 
+           [type]="field.type"
+           [placeholder]="currentLang === 'en' ? field.placeholderEn : field.placeholderAr"
+           [formControlName]="field.name">
+
+    <textarea *ngIf="field.type === 'textarea'"
+              [placeholder]="currentLang === 'en' ? field.placeholderEn : field.placeholderAr"
+              [formControlName]="field.name"></textarea>
+
+    <select *ngIf="field.type === 'staticCollection'" [formControlName]="field.name">
+      <option *ngFor="let option of field.options" [value]="option.id">
+        {{ currentLang === 'en' ? option.nameEn : option.nameAr }}
+      </option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+</form>
