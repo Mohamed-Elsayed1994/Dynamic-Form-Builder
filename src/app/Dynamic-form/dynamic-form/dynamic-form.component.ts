@@ -28,8 +28,8 @@ export class DynamicFormComponent implements OnInit {
         this.form.addControl(field.name, control);
       });
     });
+    localStorage.setItem('userLang', this.currentLang);
   }
-  
 
   getValidators(validations: Validation[]): any {
     return validations.map(val => {
@@ -48,7 +48,19 @@ export class DynamicFormComponent implements OnInit {
   } 
   changeLang(){
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
+    localStorage.setItem('userLang', this.currentLang);
   }
+  getErrorMessage(control: FieldConfig): string {
+    const mycontrol = this.form.get(control.name);
+    let errorMessage = '';
+    control.validations.forEach(val =>{
+      if(mycontrol?.hasError(val.name as string)){
+        errorMessage = this.currentLang === 'en' ? val.message.en : val.message.ar;
+      }
+    });
+    return errorMessage;
+  }
+  
 
   onSubmit() {
     if (this.form.valid) {
@@ -58,7 +70,5 @@ export class DynamicFormComponent implements OnInit {
       console.log('Form Errors:', this.form.errors);
     }
   }
-      
-
 
 }
