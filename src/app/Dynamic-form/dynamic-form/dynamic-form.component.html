@@ -3,11 +3,17 @@
     {{currentLang === 'en'? 'Arabic' : 'English'}}</button>
 </div><hr>
 <div class="row justify-content-center">
-  <div class="col-sm-12 col-md-6">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div *ngFor="let field of formFields" [class]="'col-' + field.cols">
-        <label class="form-label">{{ currentLang === 'en' ? field.labelEn : field.labelAr }}</label>
-        <input class="form-control" *ngIf="field.type === 'number' || field.type === 'text'" 
+  <div class="col-sm-12 col-md-8">
+    <div class="text-center">
+      <h2 >{{currentLang === 'en'? 'Application Form' : ' نموذج طلب'}}</h2>
+     <small >This form is built dynamically using JSON format. </small>
+    </div>
+    <br>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="row gy-2 gx-3 align-items-center border border-black p-3">
+      <div *ngFor="let field of formFields" [class]="'col-sm-' + field.cols">
+        <label class="form-label">{{ currentLang === 'en' ? field.labelEn +':': field.labelAr +':'}}</label>
+        <input class="form-control" *ngIf="field.type === 'number' || field.type === 'text'
+         || field.type === 'email' || field.type === 'date' || field.type === 'tel'|| field.type === 'file'" 
                [type]="field.type"
                [placeholder]="currentLang === 'en' ? field.placeholderEn : field.placeholderAr"
                [formControlName]="field.name">
@@ -26,12 +32,9 @@
             {{ getErrorMessage(field) }}
           </small>
         </div>
-       
-      </div><br>
-      <button class="btn btn-primary" [disabled]="form.invalid" type="submit">Submit</button>
-      
-    </form>
-    
-
+      </div>
+    </form><br>
+    <button class="btn btn-primary me-1" [disabled]="form.invalid" type="submit">Submit</button>
+    <button class="btn btn-secondary" (click)="onReset()" type="button">Reset</button>
   </div>
 </div>

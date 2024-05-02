@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl} from '@angular/forms';
 import { FieldConfig, Validation } from './field-config.interface';
 
@@ -48,6 +48,8 @@ export class DynamicFormComponent implements OnInit {
   } 
   changeLang(){
     this.currentLang = this.currentLang === 'en' ? 'ar' : 'en';
+    let direction = this.currentLang === 'en' ?  'ltr':'rtl' ;
+    document.documentElement.setAttribute('dir', direction);
     localStorage.setItem('userLang', this.currentLang);
   }
   getErrorMessage(control: FieldConfig): string {
@@ -59,6 +61,9 @@ export class DynamicFormComponent implements OnInit {
       }
     });
     return errorMessage;
+  }
+  onReset(){
+    this.form.reset();
   }
   
 

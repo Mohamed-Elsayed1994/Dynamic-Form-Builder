@@ -1,27 +1,164 @@
 {
   "fields": [
-  {
-    "priority": 1,
-    "name": "applicationNumber",
-    "type": "number",
-    "labelEn": "Application Number",
-    "labelAr": "رقم الطلب",
-    "placeholderEn": "Write Application Number",
-    "placeholderAr": "أكتب رقم الطلب",
-    "validations": [
-      {
-        "name": "required",
-        "value": true,
-        "message": {
-          "en": "Please Write Application Number",
-          "ar": "من فضلك أكتب رقم الطلب"
+    {
+      "priority": 1,
+      "name": "firstName",
+      "type": "text",
+      "labelEn": "First Name",
+      "labelAr": "الاسم الأول",
+      "placeholderEn": "Write First Name",
+      "placeholderAr": "أكتب الاسم الأول",
+      "validations": [
+        {
+          "name": "required",
+          "value": true,
+          "message": {
+            "en": "Please Write your first name",
+            "ar": "يرجى كتابة اسمك الأول"
+          }
         }
-      }
-    ],
-    "cols": 4
-  },
+      ],
+      "cols": 6
+    },
+    {
+      "priority": 2,
+      "name": "lastName",
+      "type": "text",
+      "labelEn": "Last Name",
+      "labelAr": "الاسم الأخير",
+      "placeholderEn": "Write Last Name",
+      "placeholderAr": "أكتب الاسم الأخير",
+      "validations": [
+        {
+          "name": "required",
+          "value": true,
+          "message": {
+            "en": "Please Write your last name",
+            "ar": "يرجى كتابة اسمك الأخير"
+          }
+        }
+      ],
+      "cols": 6
+    },
+    {
+      "priority": 7,
+      "name": "birthdate",
+      "type": "date",
+      "labelEn": "Birthdate",
+      "labelAr": "تاريخ الميلاد",
+      "placeholderEn": "Select your birthdate",
+      "placeholderAr": "اختر تاريخ ميلادك",
+      "validations": [
+        {
+          "name": "required",
+          "value": true,
+          "message": {
+            "en": "Please select your birthdate",
+            "ar": "يرجى اختيار تاريخ ميلادك"
+          }
+        }
+      ],
+      "cols": 6
+    },
+    {
+      "priority": 4,
+      "name": "phoneNumber",
+      "type": "tel",
+      "labelEn": "Phone Number",
+      "labelAr": "رقم الهاتف",
+      "placeholderEn": "Write your phone number",
+      "placeholderAr": "أكتب رقم هاتفك",
+      "validations": [
+        {
+          "name": "required",
+          "value": true,
+          "message": {
+            "en": "Please Write your phone number",
+            "ar": "يرجى كتابة رقم هاتفك"
+          }
+        }
+      ],
+      "cols": 4
+    },
+    {
+      "priority": 3,
+      "name": "email",
+      "type": "email",
+      "labelEn": "Email Address",
+      "labelAr": "البريد الإلكتروني",
+      "placeholderEn": "Write your email address",
+      "placeholderAr": "أكتب عنوان بريدك الإلكتروني",
+      "validations": [
+        {
+          "name": "required",
+          "value": true,
+          "message": {
+            "en": "Please Write your email address",
+            "ar": "يرجى كتابة عنوان بريدك الإلكتروني"
+          }
+        }
+      ],
+      "cols": 4
+    },
+    {
+      "priority": 10,
+      "name": "address",
+      "type": "text",
+      "labelEn": "Address",
+      "labelAr": "العنوان",
+      "placeholderEn": "Write your address",
+      "placeholderAr": "أكتب عنوانك",
+      "validations": [
+        {
+          "name": "required",
+          "value": true,
+          "message": {
+            "en": "Please Write your address",
+            "ar": "يرجى كتابة عنوانك"
+          }
+        }
+      ],
+      "cols": 12
+    },
+    {
+      "priority": 8,
+      "name": "gender",
+      "type": "staticCollection",
+      "labelEn": "Gender",
+      "labelAr": "الجنس",
+      "placeholderEn": "Select Gender",
+      "placeholderAr": "اختر الجنس",
+      "options": [
+        {
+          "id": "male",
+          "nameEn": "Male",
+          "nameAr": "ذكر"
+        },
+        {
+          "id": "female",
+          "nameEn": "Female",
+          "nameAr": "أنثى"
+        },
+        {
+          "id": "other",
+          "nameEn": "Other",
+          "nameAr": "آخر"
+        }
+      ],
+      "validations": [
+        {
+          "name": "required",
+          "value": true,
+          "message": {
+            "en": "Please select your gender",
+            "ar": "يرجى اختيار الجنس"
+          }
+        }
+      ],
+      "cols": 4
+    },
   {
-    "priority": 9,
+    "priority": 5,
     "name": "passportNo",
     "type": "text",
     "labelEn": "Passport Number",
@@ -58,47 +195,47 @@
         }
       }
     ],
-    "cols": 4
+    "cols": 6
   },
   {
-    "priority": 2,
+    "priority": 9,
     "name": "requestType",
     "type": "staticCollection",
     "options": [
       {
         "id": 1,
-        "nameEn": "Academic Affiliation",
-        "nameAr": "الإرتباط الأكاديمى"
+        "nameEn": "Font-End Developer",
+        "nameAr": "Font-End Developer "
       },
       {
         "id": 2,
-        "nameEn": "Cooperation & Understanding Between Private Higher Education Institutions & Foreign Universities",
-        "nameAr": "التعاون والتفاهم بين مؤسسات التعليم العالى الخاصة والجامعات الخارجية"
+        "nameEn": "Back-End Developer",
+        "nameAr": "Back-End Developer"
       },
       {
         "id": 3,
-        "nameEn": "International Recognition",
-        "nameAr": "الإعتراف الدولى"
+        "nameEn": "Full-Stack Developer ",
+        "nameAr": "Full-Stack Developer"
      }
     ],
-    "labelEn": "Request Type",
-    "labelAr": "نوع الطلب",
-    "placeholderEn": "Select Request Type",
-    "placeholderAr": "أختار نوع الطلب",
+    "labelEn": "Job Title",
+    "labelAr": " الوظيفة",
+    "placeholderEn": "Select Job Title",
+    "placeholderAr": "أختار الوظيفة",
     "validations": [
       {
         "name": "required",
         "value": true,
         "message": {
-        "en": "Please Select Request Type",
-        "ar": "من فضلك أختار نوع الطلب"
+        "en": "Please Select The Job Title",
+        "ar": "من فضلك أختار الوظيفة"
       }
      }
     ],
     "cols": 8
 },
 {
-  "priority": 4,
+  "priority": 12,
   "name": "notes",
   "type": "textarea",
   "labelEn": "Notes",
@@ -124,7 +261,35 @@
     }
  ],
  "cols": 12
-}    
+} ,
+{
+  "priority": 11,
+  "name": "resume",
+  "type": "file",
+  "labelEn": "Upload Your Resume",
+  "labelAr": "قم برفع سيرتك الذاتية",
+  "placeholderEn": "Choose file",
+  "placeholderAr": "اختر ملف",
+  "validations": [
+    {
+      "name": "required",
+      "value": true,
+      "message": {
+        "en": "Please upload your resume",
+        "ar": "يرجى رفع سيرتك الذاتية"
+      }
+    },
+    {
+      "name": "accept",
+      "value": ".pdf,.doc,.docx",
+      "message": {
+        "en": "Only PDF or Word documents are allowed",
+        "ar": "يُسمح فقط بمستندات PDF أو Word"
+      }
+    }
+  ],
+  "cols": 12
+}   
 
 ]
 }
